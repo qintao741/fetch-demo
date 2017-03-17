@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this is demo...</title>
+</head>
+<body>
+	<div>
+		这是简单的页面。
+	</div>
+	<div>
+		shshi
+	</div>
+	<script type="text/javascript">
+		fetch('http://localhost:8081/getJson').then(function(response) {
+			  console.log(response);
+			  if(response.ok) {
+			    response.json().then(function(json) {
+				  console.log(json);
+				});
+			  } else {
+			    console.log('Network response was not ok.');
+			  }
+			})
+			.catch(function(error) {
+			  console.log('There has been a problem with your fetch operation: ' + error.message);
+		});
+	</script>
+</body>
+</html>
